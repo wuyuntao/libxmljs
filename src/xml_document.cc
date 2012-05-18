@@ -140,7 +140,7 @@ XmlDocument::FromHtmlString(const v8::Arguments& args)
             XmlSyntaxError::PushToArray);
 
     v8::String::Utf8Value str(args[0]->ToString());
-    htmlDocPtr doc = htmlReadMemory(*str, str.length(), NULL, NULL, 0);
+    htmlDocPtr doc = htmlReadMemory(*str, str.length(), NULL, "utf-8", 37);
 
     xmlSetStructuredErrorFunc(NULL, NULL);
 
